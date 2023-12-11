@@ -5,7 +5,7 @@ import model.User;
 public interface UserService  {
 
 
-    void Voiti(User newUser);
+     User Voiti(User newUser);
     void izmenitParol(User newUser);
 }
 

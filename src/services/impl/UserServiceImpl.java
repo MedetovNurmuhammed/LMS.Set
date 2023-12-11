@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public void Voiti(User newUser) {
+    public User Voiti(User newUser) {
         Scanner scanner = new Scanner(System.in);
 
        newUser.setId(1);
@@ -26,13 +26,16 @@ public class UserServiceImpl implements UserService {
         System.out.println("Введите пароль:");
         String password = scanner.nextLine();
 
+
         if (email.equalsIgnoreCase(newUser.getEmail()) && password.equals(newUser.getPassword())) {
             System.out.println("Добро пожаловать!");
-            System.out.println(newUser);
+            return newUser;
 
         } else {
+
             System.out.println("Похоже, вы ввели неверный адрес эл. почты или пароль!");
-        }
+        }return null;
+
     }
     @Override
     public void izmenitParol(User newUser) {

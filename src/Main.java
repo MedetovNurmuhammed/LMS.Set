@@ -24,7 +24,7 @@ public class Main {
         GroupService groupService = new GroupImpl();
         Database database = new Database();
         StudentService studentService = new StudentsImpl();
-        boolean isUserAuthenticated = false;
+        boolean isT = false;
         LocalDateTime localDateTime = LocalDateTime.now();
         int hour = localDateTime.getHour();
         int min = localDateTime.getMinute();
@@ -39,7 +39,7 @@ public class Main {
         System.out.println("Саат: "+hour+":"+min);
 
 
-            System.out.println("""
+         while (true){ System.out.println("""
                     Катталган болсонуз 1 басыныз, Пароль унутуп калып, озгортуу учун 2 басыныз! 
                     эл.почта = 1111;
                     пароль = 1111;
@@ -50,9 +50,9 @@ public class Main {
 
             switch (a) {
                 case "1" -> {
+                    User user1 = userService.Voiti(user);
                     Scanner scanner1 = new Scanner(System.in);
-                    userService.Voiti(user);
-
+                   if (user1!=null){
 
                     while (true) {
                         System.out.println("""
@@ -143,7 +143,7 @@ public class Main {
                             }
 
                         }
-                    }
+                    }}
                 }
                 case "2" -> {
                     userService.izmenitParol(user);
@@ -152,5 +152,5 @@ public class Main {
 
 
             }
-        }
+        }}
     }
